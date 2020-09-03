@@ -1,3 +1,5 @@
+require "./config/environment"
+#require "./app/models/user"
 class ApplicationController < Sinatra::Base
 
     configure do
@@ -8,8 +10,12 @@ class ApplicationController < Sinatra::Base
        set :session_secret, "auth_demo_lv"
     end
 
-    get '/' do
-      "This is the start of my Sinatra project!"
+    #get '/' do
+    #  "This is the start of my Sinatra project!"
+    #end
+
+    get "/" do
+      erb :index
     end
 
     get '/home' do
